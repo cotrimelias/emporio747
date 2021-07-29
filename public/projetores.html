@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" lang="en">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/flickity.css" media="screen">
+    <link href="styles/buybutton.css" rel="stylesheet" type="text/css" />
+    <script src="js/buybutton.js"></script>
+    <link rel="icon" href="/images/icon/favicon.png" type="image/png" sizes="32x32">
+    <title>Empório 747</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.5.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.5.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.5.0/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+</head>
+
+<body>
+    <header>
+
+        <div id="title">
+            <a href="index.html">
+                <h1>Empório 747</h1>
+            </a>
+        </div>
+
+        <div id="categorias">
+            <a href="roupaseacessorios.html">
+                <h2>roupas & acessórios</h2>
+            </a>
+            <a href="projetores.html">
+                <h2>projetores</h2>
+            </a>
+            <a href="tecnologias.html">
+                <h2>tecnologias</h2>
+            </a>
+            <a href="vintage.html">
+                <h2 style="border-right: 1px solid white;">vintage</h2>
+            </a>
+        </div>
+        <div id="menu">
+            <a href="/search">
+                <div class="icon" id="men1">
+
+                    <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2.5px;}</style></defs><g id="Search"><circle class="cls-1" cx="11.09" cy="12.01" r="7.04"/><line class="cls-1" x1="16" y1="17.54" x2="26.84" y2="28.37"/></g></svg>
+                 -->
+                </div>
+            </a>
+            <a href="/login">
+                <div class="icon" id="men2">
+                    <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;}</style></defs><g id="Login"><path class="cls-1" d="M5.08,28.4S4.75,16.65,8.53,16.65H24s2.95-.25,2.95,11.75"/><circle class="cls-1" cx="16" cy="9.69" r="6.2"/></g></svg>
+                 --></div>
+            </a>
+            <a href="/heart">
+                <div class="icon" id="men3">
+                    <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;}</style></defs><g id="heart"><polyline class="cls-1" points="9.82 21.59 16 28.1 27.2 16.29"/><path class="cls-1" d="M22.18,21.59,26.51,17a5.17,5.17,0,0,0,1.84-3.8,6.18,6.18,0,1,0-12.35,0"/><path class="cls-1" d="M9.83,21.59l-4.2-4.42a5.7,5.7,0,0,1-2-4,6.18,6.18,0,1,1,12.35,0"/></g></svg>
+               --></div>
+            </a>
+            <a href="/cart">
+                <div class="icon" id="men4">
+                    <!-- <svg id="f07c7e22-98bf-4d86-8ad1-8f3cd83c851d" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.f91d5a31-822f-4fd0-85d8-deb0c2921e01{fill:#fff;}</style></defs><g id="b4c20e97-725d-4d0a-a344-3c362ffa3818" data-name="cart"><path class="f91d5a31-822f-4fd0-85d8-deb0c2921e01" d="M11,20.1H25.89a.82.82,0,0,0,.79-.59L30,8a.83.83,0,0,0-.13-.72A.82.82,0,0,0,29.17,7h-20L8.55,4.34a.83.83,0,0,0-.8-.64H2.83a.82.82,0,0,0,0,1.64H7.09c.1.47,2.8,12.62,3,13.32a2.46,2.46,0,0,0,1,4.72H25.89a.82.82,0,0,0,0-1.64H11a.82.82,0,0,1,0-1.64ZM28.09,8.62l-2.81,9.84H11.68L9.5,8.62Z"/><path class="f91d5a31-822f-4fd0-85d8-deb0c2921e01" d="M10.21,25.84a2.46,2.46,0,1,0,2.46-2.46A2.46,2.46,0,0,0,10.21,25.84ZM12.67,25a.82.82,0,1,1-.82.82A.82.82,0,0,1,12.67,25Z"/><path class="f91d5a31-822f-4fd0-85d8-deb0c2921e01" d="M21.79,25.84a2.46,2.46,0,1,0,2.46-2.46A2.46,2.46,0,0,0,21.79,25.84ZM24.25,25a.82.82,0,1,1-.82.82A.82.82,0,0,1,24.25,25Z"/></g></svg>
+               --></div>
+            </a>
+            <a>
+                <div class="icon" id="men5">
+                    <div class="container" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+    </header>
+    <div class="main-carousel" data-flickity='{ "contain": true, "wrapAround": true }'>
+        <div class="carousel-cell"><img src="./images/carousel/4.png"></div>
+
+
+        <!-- <div class="carousel-cell"><img src="./images/banner 3.png"></div> -->
+    </div>
+    <div class="main-carousel-2" data-flickity='{ "contain": true, "wrapAround": true }'>
+        <div class="carousel-cell"><img src="./images/carousel-mobile/1.png"></div>
+
+
+        <!-- <div class="carousel-cell"><img src="./images/banner 3.png"></div> -->
+    </div>
+
+    <!-- <div id="vitrine-1">
+      <div>
+      <img src="images\novidades\1.png">
+      <div id="caixa">
+        <h2>Blusa Manga Curta Black</h2>
+        <h2 class="price">R$91,99</h2>
+      </div>
+    </div>
+    <div>
+      <img src="images\novidades\4.png">
+      <div id="caixa">
+        <h2>Saia Poderosa Black</h2>
+        <h2 class="price">R$26,99</h2>
+      </div>
+    </div>
+    <div>
+      <img src="images\novidades\3.png">
+      <div id="caixa">
+        <h2>Body Liso Casual</h2>
+        <h2 class="price">R$85,90</h2>
+      </div>
+    </div>
+    <div>
+      <img src="images\novidades\2.png">
+      <div id="caixa">
+        <h2>Blusa Manga Curta</h2>
+        <h2 class="price">R$91,99</h2>
+      </div>
+    </div>
+    <div>
+      <img src="images\novidades\5.png">
+      <div id="caixa">
+        <h2>Saia Plissada</h2>
+        <h2 class="price">R$79,99</h2>
+      </div>
+    </div>
+    </div>
+    <div id="vitrine-2"></div> -->
+    <div class="content">
+        <div class="lds-ring" id="loader">
+            <div></div>
+
+        </div>
+        <div id="collection"></div>
+    </div>
+    <footer>
+        <div class="institucional">
+            <div>
+                <a href="https://www.instagram.com/emporio_747/">
+                    <h3>Instagram</h3>
+                </a>
+
+                <a href="https://www.facebook.com/emporio747">
+                    <h3>Facebook</h3>
+                </a>
+
+                <a href="mailto:contato@emporio747.com">
+                    <h3>Contato</h3>
+                </a>
+
+            </div>
+            <div style="align-items: flex-end">
+                <h3>Termos e condições</h3>
+                <h3>Política de reembolso</h3>
+                <h3>Política de privacidade</h3>
+            </div>
+        </div>
+        <div>
+            <h5>Todos os direitos reservados</h5>
+        </div>
+
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadEl = document.querySelector('#load');
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.firestore().doc('/foo/bar').get().then(() => { });
+            // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            // firebase.analytics(); // call to activate
+            // firebase.analytics().logEvent('tutorial_completed');
+            // firebase.performance(); // call to activate
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
+        });
+    </script>
+    <script src="js/projetores-api.js"></script>
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 1500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+
+        }
+        myFunction();
+    </script>
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+            document.getElementById("men1").classList.toggle("open-menu");
+            document.getElementById("men2").classList.toggle("open-menu");
+            document.getElementById("men3").classList.toggle("open-menu");
+            document.getElementById("men4").classList.toggle("open-menu");
+        }
+    </script>
+    <script src="./js/flickity.pkgd.js"></script>
+</body>
+
+</html>

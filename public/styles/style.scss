@@ -1,0 +1,860 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    // overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+// codepen
+// codepen
+header {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    padding-left: 3%;
+    padding-right: 3%;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    #title.animated {
+        transform: translateY(-7vh);
+        animation: 1.25s ease 0s 1 slideInFromTop;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+    #categorias.animated {
+        margin-left: 12vw;
+        a {
+            animation: 4s ease 0s 1 borderopacity;
+            animation-fill-mode: forwards;
+        }
+        #cat1 h2 {
+            transform: translateY(-7vh);
+            animation: 0.75s ease 0s 1 slideInFromTop;
+            animation-fill-mode: forwards;
+            animation-delay: 0.15s;
+        }
+        #cat2 h2 {
+            transform: translateY(-7vh);
+            animation: 0.75s ease 0s 1 slideInFromTop;
+            animation-fill-mode: forwards;
+            animation-delay: 0.35s;
+        }
+        #cat3 h2 {
+            transform: translateY(-7vh);
+            animation: 0.75s ease 0s 1 slideInFromTop;
+            animation-fill-mode: forwards;
+            animation-delay: 0.55s;
+        }
+        #cat4 h2 {
+            transform: translateY(-7vh);
+            animation: 0.9s ease 0s 1 slideInFromTop;
+            animation-fill-mode: forwards;
+            animation-delay: 0.75s;
+        }
+    }
+    #menu.animated {
+        #men1 {
+            transform: translateY(-7vh);
+            animation: 0.25s ease 0.5s 1 slideInFromTop, 1s ease 2s 1 menu1collapse;
+            animation-fill-mode: forwards;
+            transition: 0.5s;
+        }
+        #men2 {
+            transform: translateY(-7vh);
+            animation: 0.25s ease 0.75s 1 slideInFromTop, 1s ease 2s 1 menu2collapse;
+            animation-fill-mode: forwards;
+        }
+        #men3 {
+            transform: translateY(-7vh);
+            animation: 0.25s ease 1s 1 slideInFromTop, 1s ease 2s 1 menu3collapse;
+            animation-fill-mode: forwards;
+        }
+        #men4 {
+            transform: translateY(-7vh);
+            animation: 0.25s ease 1.25s 1 slideInFromTop, 1s ease 2s 1 menu4collapse;
+            animation-fill-mode: forwards;
+        }
+        #men5 {
+            transform: translateY(-7vh);
+            animation: 0.25s ease 1.5s 1 slideInFromTop;
+            animation-fill-mode: forwards;
+        }
+    }
+    #men5 {
+        background-color: black;
+        z-index: 99;
+        width: 3vw;
+        svg {
+            width: 2vw;
+        }
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 25px;
+            height: 3px;
+            background-color: rgb(255, 255, 255);
+            margin: 6px 6px;
+            transition: 0.4s;
+        }
+        .bar1:hover {
+            transform: rotate(-15deg);
+        }
+        .bar2:hover {
+            transform: rotate(15deg);
+        }
+        .bar3:hover {
+            transform: rotate(-15deg);
+        }
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+        .change .bar2 {
+            opacity: 0;
+        }
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-7px, -7px);
+        }
+    }
+}
+
+@keyframes menu1collapse {
+    0% {}
+    25% {
+        transform: translateX(-140%);
+    }
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+@keyframes menu2collapse {
+    0% {}
+    25% {
+        transform: translateX(-100%);
+    }
+    80% {
+        transform: translateX(300%);
+    }
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+@keyframes menu3collapse {
+    0% {}
+    25% {
+        transform: translateX(-60%);
+    }
+    60% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+@keyframes menu4collapse {
+    0% {}
+    25% {
+        transform: translateX(-20%);
+    }
+    40% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-7vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes borderopacity {
+    0% {
+        border-color: rgba($color: #ffffff, $alpha: 0);
+    }
+    100% {
+        border-color: rgba($color: #ffffff, $alpha: 1.0);
+    }
+}
+
+// .main-carousel,
+// header {
+//     animation: 2s ease-in 0s 1 opacityintro;
+// }
+// @keyframes opacityintro {
+//     0% {
+//         opacity: 0%;
+//     }
+//     100% {
+//         opacity: 100%;
+//     }
+// }
+footer {
+    background-color: black;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    .institucional {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        div {
+            padding-left: 5vw;
+            padding-right: 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            height: 50%;
+        }
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1vh;
+        h5 {
+            align-self: center;
+            color: rgba($color: rgb(255, 255, 255), $alpha: 0.75)
+        }
+    }
+}
+
+@media (max-width: 499px) {
+    .page-container .page-content {
+        width: 100% !important;
+    }
+    .page-container .page-content .login-card {
+        width: 85% !important;
+        height: 75% !important;
+    }
+    .page-container .page-content .login-card .login-form {
+        height: 90% !important;
+    }
+    .page-container .page-content .login-card .login-footer {
+        height: 10% !important;
+    }
+    .page-container .page-content .login-card .login-form .create-account {
+        height: 10%;
+        flex-direction: column;
+    }
+    .page-container .page-content .login-card .login-form .create-account a h3 {
+        font-weight: 600 !important;
+        color: #00cc8f;
+    }
+    .page-container .page-content .login-card .login-form .form-container .form {
+        height: 50% !important;
+    }
+    .page-container .page-content .login-card .login-form .form-title {
+        justify-content: center !important;
+    }
+    .page-container .page-content .login-card .login-form .form-container {
+        justify-content: center !important;
+        height: 75% !important;
+    }
+    .page-container .page-content .login-card .login-form .form-container .button-container button {
+        height: 85% !important;
+        width: 100% !important;
+    }
+    .page-container .page-content .login-card {
+        justify-content: space-between !important;
+    }
+    .has-image.shopify-buy__layout-vertical.shopify-buy__product {
+        margin-bottom: 10vh !important;
+    }
+    .content {
+        // flex-direction: column;
+        height: auto;
+        .lds-ring {
+            top: 60vh;
+        }
+    }
+    .main-carousel {
+        display: none;
+    }
+    .main-carousel-2 {
+        height: 46vh;
+        display: block !important;
+    }
+    .flickity-prev-next-button {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    header {
+        justify-content: center;
+        h1 {
+            font-size: 5vh;
+        }
+        #categorias {
+            display: none;
+        }
+        #menu {
+            position: absolute;
+            left: -10vw;
+            top: 3vw;
+        }
+        #men1,
+        #men2,
+        #men3,
+        #men4 {
+            animation: none !important;
+        }
+    }
+}
+
+@font-face {
+    font-family: 'Didot H24 Bold';
+    src: url(/fonts/Didot-HTF-B24-Bold.ttf) format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond Light';
+    src: url(/fonts/Arial-Nova-Cond-Light.ttf) format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Didot H24 Bold Local';
+    src: url("D:/Elias/Emporio 747/web store/public/fonts/Didot-HTF-B24-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond Light Local';
+    src: url("D:/Elias/Emporio 747/web store/public/fonts/Arial-Nova-Cond-Light.ttf") format("truetype");
+    font-display: swap;
+}
+
+//   @font-face {
+//     font-family: 'Didot H24 Bold';
+//     src: url(fonts\Didot-HTF-B24-Bold.ttf) format("truetype");
+//   }
+//   @font-face {
+//     font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local';
+//     src: url(fonts\Arial-Nova-Cond-Light.ttf) format("truetype");
+//   }
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: whitesmoke;
+    font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local', 'Arial Nova Cond Light Local';
+}
+
+#title h1 {
+    color: white;
+    font-family: 'Didot H24 Bold', 'Didot H24 Bold Local';
+    font-size: 4vh;
+    transition: 1s;
+}
+
+// #title:hover h1 {
+//     margin-top: 6vh;
+//     padding: 15px;
+//     height: 9vh;
+//     background: white;
+//     color: black;
+// }
+a {
+    text-decoration: none;
+}
+
+#categorias {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    color: #ccc;
+    text-transform: uppercase;
+    margin-right: 5vw;
+    a {
+        border-left: 1px solid white;
+    }
+    h2 {
+        padding-left: 2vw;
+        padding-right: 2vw;
+        transition: 500ms;
+        font-weight: 100;
+    }
+    h2::after {
+        content: "";
+        display: block;
+        margin-top: -1px;
+        width: 0%;
+        background-color: rgba($color: #ffffff, $alpha: 0.75);
+        height: 1px;
+        transition: 500ms;
+    }
+    h2:hover {
+        margin-bottom: 10px;
+    }
+    a:hover h2::after {
+        width: 100%;
+    }
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu a {
+    display: block;
+}
+
+#menu a .icon svg {
+    height: 3vh;
+    width: 3vw;
+}
+
+// #main-carrousel {
+//     height: 80vh;
+//     width: 100vw;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     overflow: hidden;
+//     img {
+//         width: 46%;
+//     }
+// }
+.main-carousel {
+    margin-bottom: 3vh;
+    margin-top: 7vh;
+}
+
+.main-carousel-2 {
+    display: none;
+    margin-bottom: 7vh;
+    margin-top: 7vh;
+}
+
+.carousel-cell {
+    width: 100vw;
+    /* full width */
+    height: 85vh;
+    /* height of carousel */
+    margin: 0px;
+    img {
+        width: 100%;
+    }
+}
+
+#novidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    h2 {
+        color: black;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+}
+
+#vitrine-1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    height: 45vh;
+    margin-left: 10vw;
+    h2 {
+        text-transform: uppercase;
+        font-weight: bolder;
+        transform: translate(0, -3vw);
+        color: rgba(255, 255, 255, 0);
+        z-index: -1;
+        transition-duration: 0.2s;
+    }
+    .price {
+        margin-top: -2vh;
+    }
+    #caixa {
+        box-shadow: none;
+        background-color: black;
+        z-index: -1;
+        transform: translate(0, -10vh);
+    }
+    div {
+        width: 15vw;
+        height: 45vh;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        cursor: pointer;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        transition-duration: 0.5s;
+    }
+    div:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+        h2 {
+            transform: translate(0, 0vh);
+            color: rgba(255, 255, 255, 1);
+        }
+        #caixa {
+            transform: translate(0, 0vh);
+        }
+    }
+}
+
+#vitrine-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    height: 20vh;
+}
+
+.content {
+    min-height: 69vh;
+    h1 {
+        font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local', sans-serif;
+        text-align: center;
+    }
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.shopify-buy__btn {
+    background-color: #191919 !important;
+    padding: 12px 25px !important;
+    border-radius: 7px !important;
+    font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local';
+    transition: 0.15s !important;
+}
+
+.shopify-buy__btn:hover {
+    background-color: #3a3a3a !important;
+    box-shadow: 0 10px 16px -6px black;
+}
+
+#collection {
+    width: 80% !important;
+}
+
+.has-image.shopify-buy__layout-vertical.shopify-buy__product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    height: 600px;
+}
+
+.shopify-buy-frame--product {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-content: center !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+.shopify-buy__product-img-wrapper {
+    padding: 0px !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    box-shadow: 0px 0px 8px -1px rgba($color: #000000, $alpha: 0.75);
+}
+
+h1.shopify-buy__product__title {
+    font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local' !important;
+    font-weight: 100 !important;
+    font-size: 23px;
+    color: #191919;
+    padding-top: 5%;
+}
+
+.shopify-buy-modal-is-active {
+    height: auto !important;
+    overflow: auto;
+}
+
+.lds-ring {
+    display: flex;
+    position: relative;
+    width: 80px;
+    height: 20vh;
+    position: absolute;
+    top: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid rgb(29, 29, 29);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(49, 49, 49) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.page-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    .page-content {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .login-card {
+            width: 65%;
+            height: 85%;
+            background-color: white;
+            border-radius: 1.5vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+            .login-form,
+            .login-footer {
+                width: 100%;
+            }
+            .login-form {
+                height: 85%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+                padding-left: 10%;
+                padding-right: 10%;
+                padding-top: 10%;
+                h1 {
+                    color: black;
+                    font-size: 2.5rem;
+                }
+                h2 {
+                    color: rgb(36, 36, 36);
+                }
+                h3 {
+                    color: rgb(109, 109, 109);
+                }
+                h2,
+                h3 {
+                    margin: 0;
+                    font-weight: 100;
+                }
+                h2 {
+                    font-size: 2.2rem;
+                    ;
+                }
+                h3 {
+                    font-size: 1.1rem;
+                }
+                .form-title {
+                    height: 15%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    h1 {
+                        font-family: 'Didot H24 Bold', 'Didot H24 Bold Local', sans-serif;
+                    }
+                }
+                .form-container {
+                    height: 70%;
+                    width: 100%;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    .form-details {
+                        height: 20%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-start;
+                        flex-direction: column;
+                    }
+                    .form {
+                        height: 60%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-flow: column nowrap;
+                        flex-direction: column;
+                        .input-tile {
+                            height: 40%;
+                            width: 100%;
+                            h3 {
+                                color: black;
+                                margin: 0;
+                                margin-bottom: 5px;
+                                font-size: 1rem;
+                                font-weight: 100;
+                            }
+                            input {
+                                height: 60%;
+                                width: 100%;
+                                border-radius: 5px;
+                                border-color: rgb(150, 150, 150);
+                                border-width: 1px;
+                                border-style: solid;
+                                transition: 0.5s;
+                                padding: 5px;
+                                font-size: 1.4rem;
+                                color: rgba(0, 0, 0, 0.65);
+                                font-weight: 100;
+                                font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local', sans-serif;
+                            }
+                            input[type="password"] {
+                                color: rgb(0, 0, 0);
+                            }
+                            input:focus {
+                                border-color: rgb(0, 255, 179);
+                                border-width: 2px;
+                                border-style: solid;
+                                outline: none;
+                            }
+                        }
+                    }
+                    .button-container {
+                        width: 100%;
+                        height: 15%;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        button {
+                            height: 100%;
+                            width: 40%;
+                            cursor: pointer;
+                            font-family: 'Arial Nova Cond Light', 'Arial Nova Cond Light Local', sans-serif;
+                            border-color: rgba($color: #000000, $alpha: 0);
+                            border-radius: 5px;
+                            font-size: 1.3rem;
+                            color: white;
+                            background-color: rgb(0, 204, 143);
+                            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                        }
+                        button:hover {
+                            background-color: rgb(0, 161, 113);
+                            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                        }
+                    }
+                }
+                .create-account {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    h3 {
+                        transition: 250ms;
+                        margin-bottom: -2px;
+                        border-bottom: solid 1px rgba(255, 255, 255, 1);
+                    }
+                    a {
+                        cursor: pointer;
+                        margin-left: 1%;
+                    }
+                    a:hover h3 {
+                        color: rgba(0, 255, 179, 1);
+                        border-bottom: solid 1px rgba(0, 255, 179, 1);
+                    }
+                }
+            }
+            .login-footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: flex-end;
+                height: 15%;
+                h3 {
+                    color: rgba(0, 0, 0, 0.35);
+                    font-family: 'Arial Nova Cond Light', sans-serif;
+                    font-weight: 100;
+                    font-size: 0.85rem;
+                    margin-right: 5%;
+                    margin-bottom: 5%;
+                    cursor: pointer;
+                    border-bottom: solid 1px white;
+                    transition: 250ms;
+                }
+                h3:hover {
+                    color: rgba(0, 0, 0, 0.75);
+                    border-bottom: solid 1px rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
+    }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
